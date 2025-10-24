@@ -1,0 +1,4 @@
+setuptools==80.9.0
+websocket-client==1.8.0
+
+utils @ git+https://github.com/dfrankmv/utils.git
