@@ -3,7 +3,8 @@ from setuptools import setup, find_packages
 setup(
     name='binance',
     version='0.1.0',
-    packages=find_packages(),
+    packages=["binance"],
+    package_dir={"binance", "."},
     install_requires=[
         "utils"
     ],
