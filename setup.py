@@ -1,3 +1,8 @@
-import setuptools
+from setuptools import setup, find_packages
 
-setuptools.setup()
+setup(
+    name='binance',
+    version='0.1.0',
+    packages=["binance"],
+    package_dir={"binance": "."}
+)
