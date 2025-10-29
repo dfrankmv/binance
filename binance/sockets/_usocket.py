@@ -42,7 +42,7 @@ class USocket(Multiton):
             except API.InvalidListenKeyException:
                 self.ws.close()
 
-    @run_in_thread
+    @daemon
     def t_connect(self):
         self.listen_key = self.client.create_listen_key()
         self.ws = WebSocketApp(f"{self.client.base_ws_url}/{self.listen_key}")
