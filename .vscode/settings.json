@@ -1,0 +1,19 @@
+{
+    "git.repositoryScanMaxDepth": 3,
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "*test*.py"
+    ],
+    "python.testing.pytestArgs": [
+        "tests",
+        ".venv/src"
+    ],
+    "python.analysis.extraPaths": [
+        ".venv/src/utils",
+    ]
+}

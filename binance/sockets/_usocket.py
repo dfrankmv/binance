@@ -32,7 +32,7 @@ class USocket(Multiton):
         except API.ListenKeyExpiredException:
             ws.close()
 
-    @run_in_thread
+    @daemon
     def t_keep_alive(self, ping_every_seconds:int):
         while True:
             try:

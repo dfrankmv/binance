@@ -211,5 +211,6 @@ poc.py
 api_keys.py
 *.gz
 logs/
-.vscode/
 cache/
+
+poc.py
