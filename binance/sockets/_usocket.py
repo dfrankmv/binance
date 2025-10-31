@@ -53,7 +53,7 @@ class USocket(Multiton):
         self.ws.on_message = self.on_message
         self.ws.run_forever()
 
-    def run(self, ping_every_seconds:int=33):
+    def start(self, ping_every_seconds:int=33):
         self.reconnect_timeout_seconds = 1
         self.t_connect()
         self.t_keep_alive(ping_every_seconds)
@@ -61,14 +61,3 @@ class USocket(Multiton):
     def next_event(self):
         while True:
             yield self._events.get()
-
-if __name__ == "__main__":
-    from api_keys import *
-    
-    with helpers.run_until_interrupt():
-        c = Futures(PUBLIC_KEY, SECRET_KEY)
-        u = USocket(c)
-        u.run(5)
-        for ev in u.next_event():
-            print(ev)
-            print()
